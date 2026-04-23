@@ -11,16 +11,17 @@
     <div class="panel glow-border login-card">
       <span class="tag success">Админка сайта</span>
       <h1>Вход в систему</h1>
-      <p>Есть две роли: администратор с полным доступом и пользователь, который может только просматривать заявки.</p>
       <form id="loginForm" class="login-grid">
-        <div class="form-field"><label for="loginUsername">Логин</label><input class="admin-input" type="text" id="loginUsername" required placeholder="admin"></div>
-        <div class="form-field"><label for="loginPassword">Пароль</label><input class="admin-input" type="password" id="loginPassword" required placeholder="admin123"></div>
+        <div class="form-field">
+          <label for="loginUsername">Логин</label>
+          <input class="admin-input" type="text" id="loginUsername" required placeholder="Логин">
+        </div>
+        <div class="form-field">
+          <label for="loginPassword">Пароль</label>
+          <input class="admin-input" type="password" id="loginPassword" required placeholder="Пароль">
+        </div>
         <button class="btn-primary" type="submit">Войти</button>
       </form>
-      <div class="demo-accounts">
-        <div class="account-line"><span>Администратор</span><strong>admin / admin123</strong></div>
-        <div class="account-line"><span>Пользователь</span><strong>viewer / viewer123</strong></div>
-      </div>
     </div>
   </div>
 
@@ -31,8 +32,8 @@
           <h1>Панель управления сайтом</h1>
           <div class="toolbar-group">
             <span id="currentUserRole" class="tag success">Администратор</span>
-            <span class="tag" id="currentUserName">Главный администратор</span>
-            <span class="tag" id="retentionInfo">Резервное локальное хранение: 45 дней.</span>
+            <span class="tag" id="currentUserName">Пользователь</span>
+            <span class="tag" id="retentionInfo">Статус хранилища</span>
           </div>
         </div>
         <div class="topbar-actions">
@@ -55,7 +56,6 @@
         <div class="admin-grid">
           <div class="panel glow-border admin-panel-card">
             <h2>Сводка по сайту</h2>
-            <p class="muted">Быстрый обзор контента, статуса облака и входящих заявок.</p>
             <div id="dashboardCards" class="dashboard-cards"></div>
           </div>
         </div>
@@ -72,6 +72,7 @@
               <div class="form-field"><label for="heroCta">Текст кнопки</label><input class="admin-input" id="heroCta" type="text"></div>
             </div>
           </div>
+
           <div class="panel glow-border admin-panel-card">
             <h2>О компании</h2>
             <div class="inline-form">
@@ -79,15 +80,26 @@
               <div class="form-field"><label for="aboutText">Текст</label><textarea id="aboutText"></textarea></div>
             </div>
           </div>
+
           <div class="panel glow-border admin-panel-card">
             <h2>Контакты</h2>
             <div class="inline-form">
               <div class="form-field"><label for="companyName">Название компании</label><input class="admin-input" id="companyName" type="text"></div>
-              <div class="form-grid-2"><div class="form-field"><label for="companyCity">Город</label><input class="admin-input" id="companyCity" type="text"></div><div class="form-field"><label for="companyAddress">Адрес</label><input class="admin-input" id="companyAddress" type="text"></div></div>
-              <div class="form-grid-2"><div class="form-field"><label for="companyPhone">Телефон</label><input class="admin-input" id="companyPhone" type="text"></div><div class="form-field"><label for="companyEmail">Email</label><input class="admin-input" id="companyEmail" type="text"></div></div>
-              <div class="form-grid-2"><div class="form-field"><label for="companyWhatsapp">WhatsApp</label><input class="admin-input" id="companyWhatsapp" type="text"></div><div class="form-field"><label for="companyTelegram">Telegram</label><input class="admin-input" id="companyTelegram" type="text"></div></div>
+              <div class="form-grid-2">
+                <div class="form-field"><label for="companyCity">Город</label><input class="admin-input" id="companyCity" type="text"></div>
+                <div class="form-field"><label for="companyAddress">Адрес</label><input class="admin-input" id="companyAddress" type="text"></div>
+              </div>
+              <div class="form-grid-2">
+                <div class="form-field"><label for="companyPhone">Телефон</label><input class="admin-input" id="companyPhone" type="text"></div>
+                <div class="form-field"><label for="companyEmail">Email</label><input class="admin-input" id="companyEmail" type="text"></div>
+              </div>
+              <div class="form-grid-2">
+                <div class="form-field"><label for="companyWhatsapp">WhatsApp</label><input class="admin-input" id="companyWhatsapp" type="text"></div>
+                <div class="form-field"><label for="companyTelegram">Telegram</label><input class="admin-input" id="companyTelegram" type="text"></div>
+              </div>
             </div>
           </div>
+
           <div class="panel glow-border admin-panel-card" data-admin-only>
             <h2>Действия</h2>
             <div class="inline-form">
@@ -102,19 +114,34 @@
       <section id="collectionsTab" class="tab-content">
         <div class="admin-grid cols-2">
           <div class="panel glow-border admin-panel-card">
-            <div class="collection-header"><div><h2>Услуги</h2><p class="muted">Можно добавлять новые услуги полностью визуально.</p></div><button class="btn-primary" data-open-modal="services" data-admin-only>Добавить услугу</button></div>
+            <div class="collection-header">
+              <div><h2>Услуги</h2></div>
+              <button class="btn-primary" data-open-modal="services" data-admin-only>Добавить услугу</button>
+            </div>
             <div id="servicesAdminList" class="collection-list"></div>
           </div>
+
           <div class="panel glow-border admin-panel-card">
-            <div class="collection-header"><div><h2>Кейсы</h2><p class="muted">Добавляйте портфолио и примеры работ прямо в интерфейсе.</p></div><button class="btn-primary" data-open-modal="cases" data-admin-only>Добавить кейс</button></div>
+            <div class="collection-header">
+              <div><h2>Кейсы</h2></div>
+              <button class="btn-primary" data-open-modal="cases" data-admin-only>Добавить кейс</button>
+            </div>
             <div id="casesAdminList" class="collection-list"></div>
           </div>
+
           <div class="panel glow-border admin-panel-card">
-            <div class="collection-header"><div><h2>Отзывы</h2><p class="muted">Отзывы тоже редактируются без кода.</p></div><button class="btn-primary" data-open-modal="testimonials" data-admin-only>Добавить отзыв</button></div>
+            <div class="collection-header">
+              <div><h2>Отзывы</h2></div>
+              <button class="btn-primary" data-open-modal="testimonials" data-admin-only>Добавить отзыв</button>
+            </div>
             <div id="testimonialsAdminList" class="collection-list"></div>
           </div>
+
           <div class="panel glow-border admin-panel-card">
-            <div class="collection-header"><div><h2>FAQ</h2><p class="muted">Блок частых вопросов для работы с клиентскими возражениями.</p></div><button class="btn-primary" data-open-modal="faq" data-admin-only>Добавить FAQ</button></div>
+            <div class="collection-header">
+              <div><h2>FAQ</h2></div>
+              <button class="btn-primary" data-open-modal="faq" data-admin-only>Добавить FAQ</button>
+            </div>
             <div id="faqAdminList" class="collection-list"></div>
           </div>
         </div>
@@ -125,11 +152,17 @@
           <div class="leads-toolbar">
             <div>
               <h2>Заявки (<span id="leadsCount">0</span>)</h2>
-              <p id="leadsSourceNote" class="muted">Режим хранения будет определён автоматически.</p>
+              <p id="leadsSourceNote" class="muted">Хранилище заявок</p>
             </div>
             <div class="toolbar-group">
               <input class="admin-input" id="leadSearch" type="text" placeholder="Поиск по имени, телефону, услуге">
-              <select class="admin-input" id="leadStatusFilter"><option value="">Все статусы</option><option value="new">new</option><option value="in_progress">in_progress</option><option value="done">done</option><option value="archived">archived</option></select>
+              <select class="admin-input" id="leadStatusFilter">
+                <option value="">Все статусы</option>
+                <option value="new">new</option>
+                <option value="in_progress">in_progress</option>
+                <option value="done">done</option>
+                <option value="archived">archived</option>
+              </select>
               <button id="refreshLeadsBtn" class="btn-secondary">Обновить</button>
               <button id="exportLeadsBtn" class="btn-secondary" data-admin-only>Экспорт заявок</button>
               <button id="clearLeadsBtn" class="btn-danger" data-admin-only>Очистить все</button>
@@ -143,7 +176,6 @@
         <div class="admin-grid cols-2">
           <div class="panel glow-border admin-panel-card">
             <h2>Подключение Supabase</h2>
-            <p class="muted">Эти поля можно заполнить прямо здесь для текущего браузера. Чтобы облако работало на всех телефонах и устройствах, продублируйте значения в файле <strong>cloud-config.js</strong> перед загрузкой сайта на хостинг.</p>
             <div class="inline-form">
               <label class="checkbox-line"><input id="cloudUseCloud" type="checkbox"> Использовать облачное хранение заявок</label>
               <div class="form-field"><label for="cloudSupabaseUrl">Supabase URL</label><input class="admin-input" id="cloudSupabaseUrl" type="text" placeholder="https://xxxx.supabase.co"></div>
@@ -151,15 +183,16 @@
               <div class="form-field"><label for="cloudTableName">Название таблицы</label><input class="admin-input" id="cloudTableName" type="text" placeholder="leads"></div>
             </div>
           </div>
+
           <div class="panel glow-border admin-panel-card">
             <h2>Telegram уведомления</h2>
-            <p class="muted">Telegram включается через Supabase Edge Function. Сайт вызывает функцию, а токен бота хранится в secrets Supabase, а не в браузере.</p>
             <div class="inline-form">
               <label class="checkbox-line"><input id="cloudTelegramEnabled" type="checkbox"> Включить Telegram уведомления</label>
               <div class="form-field"><label for="cloudTelegramFunctionName">Имя Edge Function</label><input class="admin-input" id="cloudTelegramFunctionName" type="text" placeholder="telegram-notify"></div>
               <div class="form-field"><label for="cloudConfigPreview">Подсказка</label><textarea id="cloudConfigPreview" readonly></textarea></div>
             </div>
           </div>
+
           <div class="panel glow-border admin-panel-card" data-admin-only>
             <h2>Действия по облаку</h2>
             <div class="inline-form">
@@ -168,13 +201,14 @@
               <button id="testCloudConnectionBtn" class="btn-secondary">Проверить подключение</button>
             </div>
           </div>
+
           <div class="panel glow-border admin-panel-card">
-            <h2>Что дальше</h2>
+            <h2>Информация</h2>
             <ul class="process-list">
-              <li>Выполнить SQL из файла <strong>SUPABASE_SETUP.sql</strong>.</li>
-              <li>Заполнить <strong>cloud-config.js</strong> и загрузить сайт на хостинг.</li>
-              <li>Для Telegram задеплоить функцию <strong>supabase/functions/telegram-notify</strong>.</li>
-              <li>После этого заявки будут сохраняться в Supabase и станут доступны с разных телефонов.</li>
+              <li>Настройка Supabase</li>
+              <li>Настройка cloud-config.js</li>
+              <li>Подключение telegram-notify</li>
+              <li>Проверка заявок на разных устройствах</li>
             </ul>
           </div>
         </div>
@@ -184,9 +218,14 @@
 
   <div id="editorModal" class="modal">
     <div class="panel glow-border modal-card">
-      <div class="modal-head"><h3 id="modalTitle">Редактирование</h3><button id="closeModalBtn" class="btn-ghost">Закрыть</button></div>
+      <div class="modal-head">
+        <h3 id="modalTitle">Редактирование</h3>
+        <button id="closeModalBtn" class="btn-ghost">Закрыть</button>
+      </div>
       <form id="editorForm" class="inline-form"></form>
-      <div class="form-footer" style="margin-top: 18px;"><button id="editorSaveBtn" type="button" class="btn-primary">Сохранить</button></div>
+      <div class="form-footer" style="margin-top: 18px;">
+        <button id="editorSaveBtn" type="button" class="btn-primary">Сохранить</button>
+      </div>
     </div>
   </div>
 
