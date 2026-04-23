@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>УЛУК ИНТЕРНЕШЕНЛ — IT-услуги для бизнеса</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="logo">
+        <strong id="company-name">УЛУК ИНТЕРНЕШЕНЛ</strong>
+        <span>IT-решения для офиса, магазина и бизнеса</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Главная</a>
+        <a href="services.html">Услуги</a>
+        <a href="cases.html">Кейсы</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+        <a href="admin.html">Админка</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="panel glow-border hero-copy">
+          <div class="eyebrow" id="hero-eyebrow">IT-аутсорсинг и техническая поддержка</div>
+          <h1 id="hero-tagline">IT-решения для офиса, бизнеса и торговых точек</h1>
+          <p id="hero-subtitle">Устанавливаем камеры, настраиваем оргтехнику, закупаем программное обеспечение и технику, обслуживаем сеть и помогаем бизнесу работать без сбоев.</p>
+          <div class="hero-actions">
+            <a href="#lead-form" class="btn-primary" id="hero-cta">Оставить заявку</a>
+            <a href="services.html" class="btn-secondary">Посмотреть услуги</a>
+          </div>
+          <div class="hero-stats" id="hero-stats"></div>
+        </div>
+        <div class="panel glow-border hero-card">
+          <div class="mini-card">
+            <strong>Что можно заказать</strong>
+            <p>Установка камер, настройка МФУ и принтеров, закупка техники, лицензии Windows и Office, настройка Wi‑Fi, обслуживание офисов.</p>
+          </div>
+          <div class="feature-stack">
+            <div class="mini-card">
+              <strong>Как это работает</strong>
+              <ul class="process-list">
+                <li>Принимаем заявку и уточняем задачу</li>
+                <li>Подбираем решение и оборудование</li>
+                <li>Выполняем настройку, внедрение и сопровождение</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <strong>Хранение заявок</strong>
+              <p>Заявки в этой версии сайта сохраняются локально в браузере без сервера, чтобы не нагружать хостинг.</p>
+              <div class="kpis">
+                <span class="mini-kpi">localStorage</span>
+                <span class="mini-kpi"><span data-retention-days>45</span> дней</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="tag">Популярные направления</span>
+            <h2>Основные услуги</h2>
+          </div>
+          <p>Собрали самые частые IT-задачи бизнеса в одном месте — от настройки рабочего места до видеонаблюдения и закупки ПО.</p>
+        </div>
+        <div id="services-grid"></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="tag">Реальные задачи</span>
+            <h2>Примеры кейсов</h2>
+          </div>
+          <p>Эти примеры показывают, как сайт может презентовать ваши выполненные работы. Новые кейсы потом можно добавлять визуально через админку.</p>
+        </div>
+        <div id="cases-preview-grid"></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="tag">Отзывы</span>
+            <h2>Что говорят клиенты</h2>
+          </div>
+          <p>Блок отзывов также редактируется через админку.</p>
+        </div>
+        <div class="testimonials-grid" id="testimonials-grid"></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="tag">FAQ</span>
+            <h2>Частые вопросы</h2>
+          </div>
+          <p>Ключевые ответы по работе сайта и обработке заявок.</p>
+        </div>
+        <div class="faq-list" id="faq-list"></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="panel glow-border contact-form-panel">
+          <div class="section-head">
+            <div>
+              <span class="tag success">Форма заявки</span>
+              <h2>Оставить заявку</h2>
+            </div>
+            <p id="local-updated-at">Пока заявок нет. Они будут храниться локально в браузере.</p>
+          </div>
+          <form id="lead-form" class="contact-form js-lead-form">
+            <input type="hidden" name="page" value="Главная страница">
+            <div class="form-grid-2">
+              <div class="form-field">
+                <label for="name">Имя *</label>
+                <input class="input" type="text" id="name" name="name" required>
+              </div>
+              <div class="form-field">
+                <label for="phone">Телефон *</label>
+                <input class="input" type="tel" id="phone" name="phone" required>
+              </div>
+            </div>
+            <div class="form-grid-2">
+              <div class="form-field">
+                <label for="company">Компания</label>
+                <input class="input" type="text" id="company" name="company">
+              </div>
+              <div class="form-field">
+                <label for="service">Услуга</label>
+                <select class="input" id="service" name="service" data-service-select></select>
+              </div>
+            </div>
+            <div class="form-grid-2">
+              <div class="form-field">
+                <label for="channel">Канал связи</label>
+                <select class="input" id="channel" name="channel">
+                  <option value="Телефон">Телефон</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="Telegram">Telegram</option>
+                  <option value="Email">Email</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="comment">Комментарий</label>
+                <input class="input" type="text" id="comment" name="comment" placeholder="Например: нужен монтаж камер в офисе">
+              </div>
+            </div>
+            <div class="form-footer">
+              <button type="submit" class="btn-primary">Сохранить заявку</button>
+              <span class="form-hint">Заявка сохранится временно без сервера на <span data-retention-days>45</span> дней.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="panel glow-border footer-inner">
+        <div class="footer-col">
+          <h3 id="company-name-footer">УЛУК ИНТЕРНЕШЕНЛ</h3>
+          <p>Настройка оргтехники, камеры, сети, закупка техники и лицензий для бизнеса.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="cases.html">Кейсы</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="contact.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <ul>
+            <li><a id="footer-phone-link" href="tel:+996706916367"><span id="footer-phone-text">+996 706 916 367</span></a></li>
+            <li><a id="footer-email-link" href="mailto:info@ulukit.kg"><span id="footer-email-text">info@ulukit.kg</span></a></li>
+            <li><span id="footer-city">г. Бишкек</span></li>
+            <li><span id="footer-address">Кыргызстан, Бишкек</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 УЛУК ИНТЕРНЕШЕНЛ. Все права защищены.</div>
+    </div>
+  </footer>
+  <div id="toast" class="toast"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="cloud-config.js"></script><script src="cloud.js"></script><script src="main.js"></script>
+</body>
+</html>
